@@ -5,34 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Get Coins</title>
     <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f2f5;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            min-height: 100vh;
+            box-sizing: border-box;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            overflow-x: hidden; /* Prevent horizontal scroll */
+        }
 
-body {
-    font-family: 'Roboto', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f0f2f5;
-    color: #333;
-    display: flex;
-    justify-content: center;
-    min-height: 100vh;
-    box-sizing: border-box;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    overflow-x: hidden; /* Prevent horizontal scroll */
-}
-
-
-.container {
-    width: 100vw;
-    max-width: 450px;
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    min-height: 100vh; /* Make it fill the screen without extra blank space */
-}
-
+        .container {
+            width: 100vw;
+            max-width: 450px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            min-height: 100vh; /* Make it fill the screen without extra blank space */
+        }
 
         .content-wrapper {
             flex: 1;
@@ -68,6 +65,8 @@ body {
             color: #fe2c55;
         }
         
+        /* UPDATED COIN OPTIONS SECTION */
+/* UPDATED COIN OPTIONS SECTION - SMALLER BOXES */
 .coin-options {
     display: flex;
     justify-content: space-between;
@@ -131,6 +130,7 @@ body {
 .coin-option img {
     height: 24px;
 }
+        
         .card {
             display: flex;
             align-items: center;
@@ -252,60 +252,153 @@ body {
             font-size: 24px;
             cursor: pointer;
         }
-        .custom-input-section {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-        .coin-input-box {
-            display: inline-flex;
-            align-items: center;
-            border: 2px solid #ddd;
-            border-radius: 8px;
-            padding: 10px 15px;
-            margin: 10px 0;
-        }
-        .coin-input-box img {
-            height: 30px;
-            margin-right: 10px;
-        }
-        .coin-input-box input {
-            border: none;
-            font-size: 24px;
-            font-weight: bold;
-            width: 150px;
-            text-align: center;
-            outline: none;
-        }
-        .keypad {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 10px;
-            margin-bottom: 20px;
-        }
-        .keypad button {
-            background-color: #f0f2f5;
-            border: none;
-            border-radius: 8px;
-            padding: 20px 0;
-            font-size: 20px;
-            font-weight: 500;
-            cursor: pointer;
-        }
-        .keypad button:active {
-            background-color: #ddd;
-        }
-        .recharge-btn, .pay-btn, .go-back-btn {
-            width: 100%;
-            padding: 15px;
-            border: none;
-            border-radius: 10px;
-            background-color: #fe2c55;
-            color: #fff;
-            font-size: 18px;
-            font-weight: 500;
-            cursor: pointer;
-        }
-        /* Order Summary Styles */
+
+/* CUSTOM MODAL DESIGN - PERFECT MATCH */
+#customModal .modal-content-bottom {
+    background-color: #fff;
+    width: 100%;
+    max-width: 450px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    bottom: 0;
+    box-sizing: border-box;
+}
+
+#customModal header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+#customModal .back-btn {
+    background: none;
+    border: none;
+    font-size: 22px;
+    cursor: pointer;
+    margin-right: 12px;
+    color: #333;
+    padding: 5px;
+}
+
+#customModal h2 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+}
+
+.custom-input-section {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.custom-input-section span {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 12px;
+    color: #666;
+    font-weight: 500;
+}
+
+.coin-input-box {
+    display: inline-flex;
+    align-items: center;
+    border: 1.5px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 10px 15px;
+    margin: 8px 0;
+    background: #fff;
+    width: 160px;
+    justify-content: center;
+}
+
+.coin-input-box img {
+    height: 24px;
+    margin-right: 8px;
+}
+
+.coin-input-box input {
+    border: none;
+    font-size: 20px;
+    font-weight: bold;
+    width: 80px;
+    text-align: center;
+    outline: none;
+    color: #333;
+    padding: 0;
+}
+
+#usdAmountDisplay {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 8px 0 20px;
+    color: #333;
+}
+
+.keypad {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    margin-bottom: 15px;
+}
+
+.keypad button {
+    background-color: #f8f8f8;
+    border: 1px solid #e8e8e8;
+    border-radius: 6px;
+    padding: 12px 0;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    color: #333;
+    transition: background-color 0.1s;
+}
+
+.keypad button:active {
+    background-color: #e8e8e8;
+}
+
+.recharge-btn {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 8px;
+    background-color: #fe2c55;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    margin-top: 5px;
+}
+
+/* Special offer section in custom modal */
+.custom-modal-offer {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    color: #666;
+    margin: 12px 0;
+    padding: 12px 0;
+    border-top: 1px solid #f0f0f0;
+}
+
+.custom-total-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 12px 0;
+    border-top: 1px solid #f0f0f0;
+    color: #333;
+}
+
+/* Order Summary Styles */
         .secure-payment {
             display: flex;
             align-items: center;
@@ -569,37 +662,48 @@ body {
         </footer>
     </div>
 
-    <div class="overlay" id="customModal">
-        <div class="modal-content-bottom">
-            <header>
-                <button class="back-btn" id="modalBackBtn">&lt;</button>
-                <h2>Custom</h2>
-            </header>
-            <div class="custom-input-section">
-                <span>Coin Amount</span>
-                <div class="coin-input-box">
-                    <img src="https://tikpopular.com/wp-content/coins.png" alt="Coin">
-                    <input type="text" id="coinAmountInput" value="0" maxlength="9">
-                </div>
-                <p id="usdAmountDisplay">$0.00</p>
+<div class="overlay" id="customModal">
+    <div class="modal-content-bottom">
+        <header>
+            <button class="back-btn" id="modalBackBtn">&lt;</button>
+            <h2>Custom</h2>
+        </header>
+        <div class="custom-input-section">
+            <span>Coin Amount</span>
+            <div class="coin-input-box">
+                <img src="https://tikpopular.com/wp-content/coins.png" alt="Coin">
+                <input type="text" id="coinAmountInput" value="38" maxlength="9">
             </div>
-            <div class="keypad" id="keypad">
-                <button>1</button>
-                <button>2</button>
-                <button>3</button>
-                <button>&times;</button>
-                <button>4</button>
-                <button>5</button>
-                <button>6</button>
-                <button>000</button>
-                <button>7</button>
-                <button>8</button>
-                <button>9</button>
-                <button>0</button>
-            </div>
-            <button class="recharge-btn" id="rechargeBtn">Recharge</button>
+            <p id="usdAmountDisplay">$0.40</p>
         </div>
+        <div class="keypad" id="keypad">
+            <button>1</button>
+            <button>2</button>
+            <button>3</button>
+            <button>4</button>
+            <button>5</button>
+            <button>6</button>
+            <button>7</button>
+            <button>8</button>
+            <button>9</button>
+            <button>000</button>
+            <button>0</button>
+            <button>&times;</button>
+        </div>
+        
+        <div class="custom-modal-offer">
+            <span>Special offer</span>
+            <span>Unlock 5% cash back ></span>
+        </div>
+        
+        <div class="custom-total-row">
+            <span>Total</span>
+            <span id="customTotalAmount">$0.40</span>
+        </div>
+        
+        <button class="recharge-btn" id="rechargeBtn">Recharge</button>
     </div>
+</div>
 
     <div class="overlay" id="orderModal">
         <div class="modal">
@@ -851,5 +955,3 @@ body {
     </script>
 </body>
 </html>
-
-

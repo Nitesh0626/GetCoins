@@ -18,6 +18,7 @@
             box-sizing: border-box;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
+            overflow: hidden;
         }
         .container {
             width: 375px;
@@ -33,10 +34,13 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 10px 15px;
+            padding: 15px;
             font-size: 14px;
             border-bottom: 1px solid #eee;
             color: #555;
+            background: #fff;
+            height: 50px;
+            box-sizing: border-box;
         }
         .status-icons {
             display: flex;
@@ -48,18 +52,23 @@
         }
         .content-wrapper {
             flex: 1;
-            padding: 15px;
             overflow-y: auto;
+            padding: 0;
         }
         .top-nav {
             display: flex;
             align-items: center;
-            margin-bottom: 20px;
+            padding: 15px;
+            margin-bottom: 0;
+            border-bottom: 1px solid #eee;
         }
         .top-nav img {
             height: 40px;
             border-radius: 50%;
             margin-right: 10px;
+        }
+        .recharge-section {
+            padding: 15px;
         }
         .recharge-section h2 {
             margin-top: 0;
@@ -181,6 +190,10 @@
             padding: 15px;
             background-color: #fff;
             border-top: 1px solid #eee;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            box-sizing: border-box;
         }
         .special-offer {
             display: flex;
@@ -256,17 +269,25 @@
             text-align: center;
             margin-bottom: 20px;
         }
-        .input-display {
-            display: flex;
-            justify-content: center;
+        .coin-input-box {
+            display: inline-flex;
             align-items: center;
-            font-size: 24px;
-            font-weight: bold;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            padding: 10px 15px;
             margin: 10px 0;
         }
-        .input-display img {
+        .coin-input-box img {
             height: 30px;
-            margin-right: 5px;
+            margin-right: 10px;
+        }
+        .coin-input-box input {
+            border: none;
+            font-size: 24px;
+            font-weight: bold;
+            width: 150px;
+            text-align: center;
+            outline: none;
         }
         .keypad {
             display: grid;
@@ -361,6 +382,7 @@
             color: #999;
             text-align: center;
             margin-bottom: 10px;
+            line-height: 1.4;
         }
         .summary-footer {
             padding: 15px;
@@ -375,13 +397,13 @@
             font-weight: 500;
         }
         /* Success Page Styles */
-        .success-content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
+        .success-container {
+            background-color: #fff;
+            width: 325px;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
             text-align: center;
-            padding: 50px 20px;
         }
         .success-icon {
             font-size: 80px;
@@ -393,35 +415,30 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 20px;
+            margin: 0 auto 20px;
         }
         .success-icon img {
             width: 70px;
             height: 70px;
         }
-        .success-content h1 {
+        .success-container h1 {
             font-size: 24px;
             margin-bottom: 10px;
         }
-        .success-content p {
+        .success-container p {
             color: #666;
             font-size: 14px;
             margin: 5px 0;
         }
         
         /* Loader Animation Styles */
-        #loaderOverlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+        .loader-container {
             background-color: #fff;
-            display: none;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            z-index: 100;
+            width: 325px;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            text-align: center;
         }
         .tiktok-loader {
             position: relative;
@@ -430,7 +447,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            margin-bottom: 20px;
+            margin: 0 auto 20px;
         }
         .tiktok-loader .dot {
             position: absolute;
@@ -461,12 +478,33 @@
         #processingMessage {
             font-size: 16px;
             color: #555;
+            margin-bottom: 5px;
+        }
+        #processingSubMessage {
+            font-size: 14px;
+            color: #777;
+            margin-bottom: 15px;
+        }
+        #countdownTimer {
+            font-size: 18px;
+            font-weight: bold;
+            color: #fe2c55;
         }
     </style>
 </head>
 <body>
 
     <div class="container" id="mainPage">
+        <header>
+            <div class="status-icons">
+                <span id="timeDisplay">9:41</span>
+            </div>
+            <div class="status-icons">
+                <img src="https://img.icons8.com/ios-filled/50/000000/signal.png" alt="Signal">
+                <img src="https://img.icons8.com/ios-filled/50/000000/wifi.png" alt="WiFi">
+                <img src="https://img.icons8.com/ios-filled/50/000000/battery-level.png" alt="Battery">
+            </div>
+        </header>
         <div class="content-wrapper">
             <nav class="top-nav">
                 <img src="https://img.icons8.com/ios-filled/50/000000/tiktok.png" alt="TikTok">
@@ -540,16 +578,16 @@
                     <img src= "https://img.icons8.com/?size=100&id=Aub11Fs5DJVg&format=png&color=000000" alt="paytm"> 
                 </div>
             </div>
-            <footer>
-                <div class="special-offer">
-                    <span>Special offer</span>
-                    <span>Unlock 5% cash back ></span>
-                </div>
-                <button class="buy-button" id="buyButton">
-                    Buy for $0.31
-                </button>
-            </footer>
         </div>
+        <footer>
+            <div class="special-offer">
+                <span>Special offer</span>
+                <span>Unlock 5% cash back ></span>
+            </div>
+            <button class="buy-button" id="buyButton">
+                Buy for $0.31
+            </button>
+        </footer>
     </div>
 
     <div class="overlay" id="customModal">
@@ -561,9 +599,9 @@
             </header>
             <div class="custom-input-section">
                 <span>Coin Amount</span>
-                <div class="input-display">
+                <div class="coin-input-box">
                     <img src="https://tikpopular.com/wp-content/coins.png" alt="Coin">
-                    <span id="coinAmountDisplay">0</span>
+                    <input type="text" id="coinAmountInput" value="0" maxlength="9">
                 </div>
                 <p id="usdAmountDisplay">$0.00</p>
             </div>
@@ -618,6 +656,7 @@
                     <span>Apple Pay</span>
                     <div class="dot"></div>
                 </div>
+                <p class="policy-text">By proceeding, you agree to our Privacy Policy and Terms of Service. Your payment information is processed securely.</p>
             </div>
             <div class="total-row">
                 <span>Total</span>
@@ -628,17 +667,19 @@
     </div>
 
     <div class="overlay" id="loaderModal">
-        <div class="modal-content-full">
+        <div class="loader-container">
             <div class="tiktok-loader">
                 <div class="dot red"></div>
                 <div class="dot cyan"></div>
             </div>
-            <p id="processingMessage">Processing recharge...</p>
+            <p id="processingMessage">Processing your payment...</p>
+            <p id="processingSubMessage">This could take a few seconds.</p>
+            <p id="countdownTimer">05:00</p>
         </div>
     </div>
 
     <div class="overlay" id="successModal">
-        <div class="modal-content-full">
+        <div class="success-container">
             <div class="success-icon">
                 <img src="https://img.icons8.com/material-sharp/96/00B229/checked.png" alt="Checked">
             </div>
@@ -667,10 +708,23 @@
             const coinOptions = document.querySelectorAll('.coin-option');
             const paymentOptions = document.querySelectorAll('.payment-option');
             const usernameInput = document.getElementById('usernameInput');
+            const coinAmountInput = document.getElementById('coinAmountInput');
+            const countdownTimer = document.getElementById('countdownTimer');
 
             let selectedCoins = 30;
             let selectedPrice = 0.31;
             let customAmount = '';
+            let countdownInterval;
+
+            // Update time display
+            function updateTime() {
+                const now = new Date();
+                const timeStr = now.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
+                document.getElementById('timeDisplay').textContent = timeStr;
+            }
+            
+            updateTime();
+            setInterval(updateTime, 60000);
 
             // Handle coin option selection and button text
             coinOptions.forEach(option => {
@@ -704,9 +758,7 @@
             });
 
             // Keypad functionality
-            const coinAmountDisplay = document.getElementById('coinAmountDisplay');
             const usdAmountDisplay = document.getElementById('usdAmountDisplay');
-            const keypad = document.getElementById('keypad');
 
             keypad.addEventListener('click', (e) => {
                 if (e.target.tagName === 'BUTTON') {
@@ -722,12 +774,26 @@
                     
                     const coins = parseInt(customAmount || '0', 10);
                     const usd = (coins * 0.0104).toFixed(2);
-                    coinAmountDisplay.textContent = coins.toLocaleString();
+                    coinAmountInput.value = coins.toLocaleString();
                     usdAmountDisplay.textContent = `$${usd}`;
                     
                     selectedCoins = coins;
                     selectedPrice = parseFloat(usd);
                 }
+            });
+
+            // Handle direct input
+            coinAmountInput.addEventListener('input', (e) => {
+                let value = e.target.value.replace(/\D/g, '');
+                if (value.length > 9) value = value.slice(0, 9);
+                customAmount = value;
+                
+                const coins = parseInt(value || '0', 10);
+                const usd = (coins * 0.0104).toFixed(2);
+                usdAmountDisplay.textContent = `$${usd}`;
+                
+                selectedCoins = coins;
+                selectedPrice = parseFloat(usd);
             });
 
             rechargeBtn.addEventListener('click', () => {
@@ -753,21 +819,45 @@
                 document.getElementById('summaryTotal').textContent = `$${selectedPrice.toFixed(2)}`;
             }
 
+            // Start countdown timer
+            function startCountdown() {
+                let timeLeft = 300; // 5 minutes in seconds
+                
+                clearInterval(countdownInterval);
+                countdownInterval = setInterval(() => {
+                    timeLeft--;
+                    
+                    if (timeLeft <= 0) {
+                        clearInterval(countdownInterval);
+                        countdownTimer.textContent = "00:00";
+                        return;
+                    }
+                    
+                    const minutes = Math.floor(timeLeft / 60);
+                    const seconds = timeLeft % 60;
+                    countdownTimer.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+                }, 1000);
+            }
+
             // Navigation
             buyButton.addEventListener('click', () => {
+                mainPage.style.display = 'none';
                 orderModal.classList.add('show');
                 updateSummaryPage();
             });
 
             summaryBackBtn.addEventListener('click', () => {
                 orderModal.classList.remove('show');
+                mainPage.style.display = 'flex';
             });
 
             payNowBtn.addEventListener('click', () => {
                 orderModal.classList.remove('show');
                 loaderModal.classList.add('show');
+                startCountdown();
                 
                 setTimeout(() => {
+                    clearInterval(countdownInterval);
                     loaderModal.classList.remove('show');
                     successModal.classList.add('show');
                     document.getElementById('successMessage').textContent = `${parseInt(selectedCoins).toLocaleString()} Coins were sent to ${usernameInput.value || 'Guest'}`;
@@ -776,6 +866,7 @@
 
             goBackBtn.addEventListener('click', () => {
                 successModal.classList.remove('show');
+                mainPage.style.display = 'flex';
             });
 
             // Close overlays when clicking outside
@@ -783,6 +874,7 @@
                 overlay.addEventListener('click', (e) => {
                     if (e.target === overlay) {
                         overlay.classList.remove('show');
+                        mainPage.style.display = 'flex';
                     }
                 });
             });

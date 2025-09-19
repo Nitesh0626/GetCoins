@@ -436,84 +436,181 @@
     color: #333;
 }
 
-/* Order Summary Styles */
-        .secure-payment {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-color: #d4edda;
-            color: #155724;
-            padding: 10px;
-            border-radius: 8px;
-            margin-bottom: 20px;
-        }
-        .secure-payment img {
-            height: 20px;
-            margin-right: 5px;
-        }
-        .order-details {
-            border-bottom: 1px solid #eee;
-            padding-bottom: 15px;
-            margin-bottom: 15px;
-        }
-        .detail-row {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 10px;
-        }
-        .payment-method-section {
-            margin-bottom: 20px;
-        }
-        .payment-option {
-            display: flex;
-            align-items: center;
-            border: 1px solid #eee;
-            border-radius: 8px;
-            padding: 15px;
-            margin-bottom: 10px;
-            cursor: pointer;
-            transition: all 0.2s;
-        }
-        .payment-option:hover, .payment-option.selected {
-            background-color: #f0f7ff;
-            border-color: #007bff;
-            box-shadow: 0 0 5px rgba(0, 123, 255, 0.2);
-        }
-        .payment-option img {
-            height: 25px;
-            margin-right: 15px;
-        }
-        .payment-option.selected {
-            border-color: #fe2c55;
-            position: relative;
-        }
-        .payment-option.selected .dot {
-            position: absolute;
-            right: 15px;
-            width: 10px;
-            height: 10px;
-            background-color: #fe2c55;
-            border-radius: 50%;
-        }
-        .policy-text {
-            font-size: 10px;
-            color: #999;
-            text-align: center;
-            margin-bottom: 10px;
-            line-height: 1.4;
-        }
-        .summary-footer {
-            padding: 15px;
-            background-color: #fff;
-            border-top: 1px solid #eee;
-        }
-        .total-row {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 15px;
-            font-size: 18px;
-            font-weight: 500;
-        }
+/* ORDER SUMMARY STYLES - UPDATED TO MATCH DESIGN */
+#orderModal .modal {
+    background-color: #fff;
+    width: 90%;
+    max-width: 400px;
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+#orderModal header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+#orderModal .back-btn {
+    background: none;
+    border: none;
+    font-size: 22px;
+    cursor: pointer;
+    margin-right: 12px;
+    color: #333;
+}
+
+#orderModal h2 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+}
+
+.secure-payment {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: #f8f9fa;
+    color: #6c757d;
+    padding: 12px 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-size: 14px;
+    border: 1px solid #e9ecef;
+}
+
+.secure-payment img {
+    height: 18px;
+    margin-right: 8px;
+}
+
+.order-details {
+    border-bottom: 1px solid #eee;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+}
+
+.detail-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+    font-size: 15px;
+}
+
+.detail-row:first-child {
+    color: #6c757d;
+}
+
+.detail-row:last-child {
+    margin-bottom: 0;
+    font-weight: 500;
+}
+
+.payment-method-section {
+    margin-bottom: 20px;
+}
+
+.payment-method-section h4 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.payment-option {
+    display: flex;
+    align-items: center;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: all 0.2s;
+    background-color: #fff;
+}
+
+.payment-option:hover {
+    background-color: #f8f9fa;
+}
+
+.payment-option.selected {
+    background-color: #f8f9fa;
+    border-color: #007bff;
+    position: relative;
+}
+
+.payment-option img {
+    height: 24px;
+    margin-right: 15px;
+}
+
+.payment-option span {
+    font-size: 15px;
+    color: #333;
+}
+
+.payment-option.selected .dot {
+    position: absolute;
+    right: 15px;
+    width: 18px;
+    height: 18px;
+    background-color: #007bff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.payment-option.selected .dot::after {
+    content: "";
+    width: 8px;
+    height: 8px;
+    background-color: white;
+    border-radius: 50%;
+}
+
+.policy-text {
+    font-size: 12px;
+    color: #6c757d;
+    text-align: center;
+    margin: 20px 0 15px;
+    line-height: 1.5;
+    padding: 0 10px;
+}
+
+.policy-text strong {
+    color: #333;
+    font-weight: 600;
+}
+
+.total-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    font-size: 17px;
+    font-weight: 600;
+    padding: 15px 0;
+    border-top: 1px solid #eee;
+    color: #333;
+}
+
+.pay-btn {
+    width: 100%;
+    padding: 16px;
+    border: none;
+    border-radius: 10px;
+    background-color: #fe2c55;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 5px;
+}
         /* Success Page Styles */
         .success-container {
             background-color: #fff;
@@ -747,47 +844,52 @@
 </div>
 
     <div class="overlay" id="orderModal">
-        <div class="modal">
-            <header>
-                <button class="back-btn" id="summaryBackBtn">&lt;</button>
-                <h2>Order summary</h2>
-    
-            </header>
-            <div class="secure-payment">
-                <img src="https://img.icons8.com/ios-filled/50/000000/shield.png" alt="Shield">
-                <span>Secure payment</span>
-            </div>
-            <div class="order-details">
-                <div class="detail-row">
-                    <span>Account</span>
-                    <span id="accountName"></span>
-                </div>
-                <div class="detail-row">
-                    <span id="summaryCoins"></span>
-                    <span id="summaryPrice"></span>
-                </div>
-            </div>
-            <div class="payment-method-section">
-                <h4>Payment method</h4>
-                <div class="payment-option selected" data-method="card">
-                    <img src="https://img.icons8.com/?size=100&id=E5EliYtohgj5&format=png&color=000000" alt="Credit Card">
-                    <span>Add Credit Or Debit Card</span>
-                    <div class="dot"></div>
-                </div>
-                <div class="payment-option" data-method="applepay">
-                    <img src="https://img.icons8.com/ios-filled/50/000000/apple-pay.png" alt="Apple Pay">
-                    <span>Apple Pay</span>
-                    <div class="dot"></div>
-                </div>
-                <p class="policy-text">By proceeding, you agree to our Privacy Policy and Terms of Service. Your payment information is processed securely.</p>
-            </div>
-            <div class="total-row">
-                <span>Total</span>
-                <span id="summaryTotal"></span>
-            </div>
-            <button class="pay-btn" id="payNowBtn">Pay now</button>
+    <div class="modal">
+        <header>
+            <button class="back-btn" id="summaryBackBtn">&lt;</button>
+            <h2>Order summary</h2>
+        </header>
+        
+        <div class="secure-payment">
+            <img src="https://img.icons8.com/ios-filled/50/000000/shield.png" alt="Shield">
+            <span>Secure payment</span>
         </div>
+        
+        <div class="order-details">
+            <div class="detail-row">
+                <span>Account</span>
+                <span id="accountName"></span>
+            </div>
+            <div class="detail-row">
+                <span id="summaryCoins"></span>
+                <span id="summaryPrice"></span>
+            </div>
+        </div>
+        
+        <div class="payment-method-section">
+            <h4>Payment method</h4>
+            <div class="payment-option selected" data-method="card">
+                <img src="https://img.icons8.com/?size=100&id=E5EliYtohgj5&format=png&color=000000" alt="Credit Card">
+                <span>Add Credit Or Debit Card</span>
+                <div class="dot"></div>
+            </div>
+            <div class="payment-option" data-method="applepay">
+                <img src="https://img.icons8.com/ios-filled/50/000000/apple-pay.png" alt="Apple Pay">
+                <span>Apple Pay</span>
+                <div class="dot"></div>
+            </div>
+            
+            <p class="policy-text">By tapping <strong>Pay</strong> to make a purchase, you acknowledge that you are purchasing a limited license to access this virtual item subject to</p>
+        </div>
+        
+        <div class="total-row">
+            <span>Total</span>
+            <span id="summaryTotal"></span>
+        </div>
+        
+        <button class="pay-btn" id="payNowBtn">Pay now</button>
     </div>
+</div>
 
     <div class="overlay" id="loaderModal">
         <div class="loader-container">

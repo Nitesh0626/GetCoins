@@ -21,34 +21,15 @@
             overflow: hidden;
         }
         .container {
-            width: 375px;
-            height: 812px;
+            width: 100vw;
+            height: 100vh;
+            max-width: 450px; /* Limit max width for a better experience on large screens */
             background-color: #fff;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             display: flex;
             flex-direction: column;
             overflow: hidden;
             position: relative;
-        }
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px;
-            font-size: 14px;
-            border-bottom: 1px solid #eee;
-            color: #555;
-            background: #fff;
-            height: 50px;
-            box-sizing: border-box;
-        }
-        .status-icons {
-            display: flex;
-            align-items: center;
-        }
-        .status-icons img {
-            height: 15px;
-            margin-left: 5px;
         }
         .content-wrapper {
             flex: 1;
@@ -107,7 +88,8 @@
             align-items: center; 
             gap: 8px; 
             height: 120px; 
-            width: 100px;
+            width: calc(33.33% - 8px); /* Adjust width for responsive grid */
+            max-width: 120px;
         }
         
         .coin-option:hover, .coin-option.selected {
@@ -190,10 +172,11 @@
             padding: 15px;
             background-color: #fff;
             border-top: 1px solid #eee;
-            position: absolute;
+            position: sticky;
             bottom: 0;
             width: 100%;
             box-sizing: border-box;
+            z-index: 10;
         }
         .special-offer {
             display: flex;
@@ -231,7 +214,8 @@
         }
         .modal {
             background-color: #fff;
-            width: 375px;
+            width: 90%;
+            max-width: 400px;
             border-radius: 20px;
             padding: 20px;
             box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
@@ -239,15 +223,14 @@
         }
         .modal-content-bottom {
             background-color: #fff;
-            width: 375px;
+            width: 100%;
+            max-width: 450px;
             border-top-left-radius: 20px;
             border-top-right-radius: 20px;
             padding: 20px;
             box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.1);
             position: absolute;
             bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
         }
         .modal-content-full {
             width: 100%;
@@ -399,7 +382,8 @@
         /* Success Page Styles */
         .success-container {
             background-color: #fff;
-            width: 325px;
+            width: 90%;
+            max-width: 400px;
             border-radius: 20px;
             padding: 30px;
             box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
@@ -434,7 +418,8 @@
         /* Loader Animation Styles */
         .loader-container {
             background-color: #fff;
-            width: 325px;
+            width: 90%;
+            max-width: 400px;
             border-radius: 20px;
             padding: 30px;
             box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
@@ -495,16 +480,6 @@
 <body>
 
     <div class="container" id="mainPage">
-        <header>
-            <div class="status-icons">
-                <span id="timeDisplay">9:41</span>
-            </div>
-            <div class="status-icons">
-                <img src="https://img.icons8.com/ios-filled/50/000000/signal.png" alt="Signal">
-                <img src="https://img.icons8.com/ios-filled/50/000000/wifi.png" alt="WiFi">
-                <img src="https://img.icons8.com/ios-filled/50/000000/battery-level.png" alt="Battery">
-            </div>
-        </header>
         <div class="content-wrapper">
             <nav class="top-nav">
                 <img src="https://img.icons8.com/ios-filled/50/000000/tiktok.png" alt="TikTok">
@@ -628,7 +603,7 @@
             <header>
                 <button class="back-btn" id="summaryBackBtn">&lt;</button>
                 <h2>Order summary</h2>
-                <span class="help-icon">?</span>
+    
             </header>
             <div class="secure-payment">
                 <img src="https://img.icons8.com/ios-filled/50/000000/shield.png" alt="Shield">
@@ -716,16 +691,6 @@
             let customAmount = '';
             let countdownInterval;
 
-            // Update time display
-            function updateTime() {
-                const now = new Date();
-                const timeStr = now.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
-                document.getElementById('timeDisplay').textContent = timeStr;
-            }
-            
-            updateTime();
-            setInterval(updateTime, 60000);
-
             // Handle coin option selection and button text
             coinOptions.forEach(option => {
                 option.addEventListener('click', () => {
@@ -736,7 +701,7 @@
                         // Custom button handling
                     } else {
                         selectedCoins = option.dataset.coins;
-                        selectedPrice = option.dataset.price;
+                        selectedPrice = parseFloat(option.dataset.price);
                         buyButton.textContent = `Buy for $${parseFloat(selectedPrice).toFixed(2)}`;
                     }
                 });
@@ -801,6 +766,7 @@
                 buyButton.textContent = `Buy for $${selectedPrice.toFixed(2)}`;
                 orderModal.classList.add('show');
                 updateSummaryPage();
+                mainPage.style.display = 'none';
             });
 
             // Payment method selection

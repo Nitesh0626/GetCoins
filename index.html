@@ -65,7 +65,6 @@
             color: #fe2c55;
         }
         
-        /* UPDATED COIN OPTIONS SECTION */
 /* UPDATED COIN OPTIONS SECTION - SMALLER BOXES */
 .coin-options {
     display: flex;
@@ -435,183 +434,221 @@
     border-top: 1px solid #f0f0f0;
     color: #333;
 }
+    /* ... (all existing styles remain the same) ... */
 
-/* ORDER SUMMARY STYLES - UPDATED TO MATCH DESIGN */
-#orderModal .modal {
-    background-color: #fff;
-    width: 90%;
-    max-width: 400px;
-    border-radius: 16px;
-    padding: 20px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-    position: relative;
-}
+    /* ORDER SUMMARY STYLES - UPDATED SPACING */
+    #orderModal .modal {
+        background-color: #fff;
+        width: 100%;
+        max-width: 450px;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+        padding: 20px;
+        box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.1);
+        position: absolute;
+        bottom: 0;
+        box-sizing: border-box;
+        height: auto;
+        max-height: 90vh;
+        display: flex;
+        flex-direction: column;
+    }
 
-#orderModal header {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
-    padding-bottom: 15px;
-    border-bottom: 1px solid #f0f0f0;
-}
+    #orderModal header {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 15px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #f0f0f0;
+        position: relative;
+    }
 
-#orderModal .back-btn {
-    background: none;
-    border: none;
-    font-size: 22px;
-    cursor: pointer;
-    margin-right: 12px;
-    color: #333;
-}
+    #orderModal .back-btn {
+        background: none;
+        border: none;
+        cursor: pointer;
+        margin-right: 12px;
+        color: #333;
+        padding: 5px;
+        position: absolute;
+        left: 0;
+        font-size: 22px;
+    }
 
-#orderModal h2 {
-    margin: 0;
-    font-size: 18px;
-    font-weight: 600;
-    color: #333;
-}
+    #orderModal h2 {
+        margin: 0;
+        font-size: 18px;
+        font-weight: 600;
+        color: #333;
+        text-align: center;
+    }
 
-.secure-payment {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    background-color: #f8f9fa;
-    color: #6c757d;
-    padding: 12px 15px;
-    border-radius: 8px;
-    margin-bottom: 20px;
-    font-size: 14px;
-    border: 1px solid #e9ecef;
-}
+    #orderModal .help-icon {
+        position: absolute;
+        right: 0;
+        width: 22px;
+        height: 22px;
+        border: 1px solid #ccc;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 14px;
+        color: #666;
+    }
 
-.secure-payment img {
-    height: 18px;
-    margin-right: 8px;
-}
+    .secure-payment {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #e8f5e9;
+        color: #388e3c;
+        padding: 12px 15px;
+        border-radius: 8px;
+        margin-bottom: 15px; /* Reduced margin */
+        font-size: 14px;
+        border: 1px solid #c8e6c9;
+    }
 
-.order-details {
-    border-bottom: 1px solid #eee;
-    padding-bottom: 15px;
-    margin-bottom: 15px;
-}
+    .secure-payment img {
+        height: 18px;
+        margin-right: 8px;
+    }
 
-.detail-row {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 12px;
-    font-size: 15px;
-}
+    .order-details {
+        border-bottom: 1px solid #eee;
+        padding-bottom: 12px; /* Reduced padding */
+        margin-bottom: 12px; /* Reduced margin */
+    }
 
-.detail-row:first-child {
-    color: #6c757d;
-}
+    .detail-row {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 10px; /* Reduced margin */
+        font-size: 15px;
+    }
 
-.detail-row:last-child {
-    margin-bottom: 0;
-    font-weight: 500;
-}
+    .detail-row:first-child {
+        color: #6c757d;
+    }
 
-.payment-method-section {
-    margin-bottom: 20px;
-}
+    .detail-row:last-child {
+        margin-bottom: 0;
+        font-weight: 500;
+    }
 
-.payment-method-section h4 {
-    font-size: 16px;
-    font-weight: 600;
-    margin-bottom: 15px;
-    color: #333;
-}
+    .payment-method-section {
+        margin-bottom: 15px; /* Reduced margin */
+    }
 
-.payment-option {
-    display: flex;
-    align-items: center;
-    border: 1px solid #e9ecef;
-    border-radius: 8px;
-    padding: 15px;
-    margin-bottom: 10px;
-    cursor: pointer;
-    transition: all 0.2s;
-    background-color: #fff;
-}
+    .payment-method-section h4 {
+        font-size: 15px;
+        font-weight: 500;
+        margin-bottom: 12px; /* Reduced margin */
+        color: #333;
+    }
 
-.payment-option:hover {
-    background-color: #f8f9fa;
-}
+    .payment-option {
+        display: flex;
+        align-items: center;
+        border: 1px solid #e9ecef;
+        border-radius: 8px;
+        padding: 12px 15px;
+        margin-bottom: 8px; /* Reduced margin */
+        cursor: pointer;
+        transition: all 0.2s;
+        background-color: #fff;
+    }
 
-.payment-option.selected {
-    background-color: #f8f9fa;
-    border-color: #007bff;
-    position: relative;
-}
+    .payment-option:hover {
+        background-color: #f8f9fa;
+    }
 
-.payment-option img {
-    height: 24px;
-    margin-right: 15px;
-}
+    .payment-option.selected {
+        background-color: #f8f9fa;
+        border-color: #007bff;
+        position: relative;
+    }
 
-.payment-option span {
-    font-size: 15px;
-    color: #333;
-}
+    .payment-option img {
+        height: 22px;
+        margin-right: 12px;
+    }
 
-.payment-option.selected .dot {
-    position: absolute;
-    right: 15px;
-    width: 18px;
-    height: 18px;
-    background-color: #007bff;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+    .payment-option span {
+        font-size: 14px;
+        color: #333;
+    }
 
-.payment-option.selected .dot::after {
-    content: "";
-    width: 8px;
-    height: 8px;
-    background-color: white;
-    border-radius: 50%;
-}
+    .payment-option.selected .dot {
+        position: absolute;
+        right: 15px;
+        width: 18px;
+        height: 18px;
+        background-color: #007bff;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 
-.policy-text {
-    font-size: 12px;
-    color: #6c757d;
-    text-align: center;
-    margin: 20px 0 15px;
-    line-height: 1.5;
-    padding: 0 10px;
-}
+    .payment-option.selected .dot::after {
+        content: "";
+        width: 8px;
+        height: 8px;
+        background-color: white;
+        border-radius: 50%;
+    }
 
-.policy-text strong {
-    color: #333;
-    font-weight: 600;
-}
+    .policy-text {
+        font-size: 12px;
+        color: #6c757d;
+        text-align: center;
+        margin: 12px 0 10px; /* Reduced margins */
+        line-height: 1.5;
+        padding: 0 10px;
+    }
 
-.total-row {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 15px;
-    font-size: 17px;
-    font-weight: 600;
-    padding: 15px 0;
-    border-top: 1px solid #eee;
-    color: #333;
-}
+    .policy-text strong {
+        color: #333;
+        font-weight: 600;
+    }
 
-.pay-btn {
-    width: 100%;
-    padding: 16px;
-    border: none;
-    border-radius: 10px;
-    background-color: #fe2c55;
-    color: #fff;
-    font-size: 16px;
-    font-weight: 600;
-    cursor: pointer;
-    margin-top: 5px;
-}
-        /* Success Page Styles */
+    .total-row {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 12px; /* Reduced margin */
+        font-size: 16px;
+        font-weight: 600;
+        padding: 12px 0 8px; /* Reduced padding */
+        border-top: 1px solid #eee;
+        color: #333;
+    }
+
+    .pay-btn {
+        width: 100%;
+        padding: 16px;
+        border: none;
+        border-radius: 10px;
+        background-color: #fe2c55;
+        color: #fff;
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+        margin-top: 0; /* Removed margin */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+    }
+
+    .pay-btn img {
+        height: 20px;
+    }
+
+
+/* Success Page Styles */
         .success-container {
             background-color: #fff;
             width: 90%;
@@ -844,52 +881,56 @@
 </div>
 
     <div class="overlay" id="orderModal">
-    <div class="modal">
-        <header>
-            <button class="back-btn" id="summaryBackBtn">&lt;</button>
-            <h2>Order summary</h2>
-        </header>
-        
-        <div class="secure-payment">
-            <img src="https://img.icons8.com/ios-filled/50/000000/shield.png" alt="Shield">
-            <span>Secure payment</span>
-        </div>
-        
-        <div class="order-details">
-            <div class="detail-row">
-                <span>Account</span>
-                <span id="accountName"></span>
-            </div>
-            <div class="detail-row">
-                <span id="summaryCoins"></span>
-                <span id="summaryPrice"></span>
-            </div>
-        </div>
-        
-        <div class="payment-method-section">
-            <h4>Payment method</h4>
-            <div class="payment-option selected" data-method="card">
-                <img src="https://img.icons8.com/?size=100&id=E5EliYtohgj5&format=png&color=000000" alt="Credit Card">
-                <span>Add Credit Or Debit Card</span>
-                <div class="dot"></div>
-            </div>
-            <div class="payment-option" data-method="applepay">
-                <img src="https://img.icons8.com/ios-filled/50/000000/apple-pay.png" alt="Apple Pay">
-                <span>Apple Pay</span>
-                <div class="dot"></div>
+        <div class="modal">
+            <header>
+                <button class="back-btn" id="summaryBackBtn">←</button>
+                <h2>Order summary</h2>
+                <div class="help-icon">❓</div>
+            </header>
+            
+            <div class="secure-payment">
+                <img src="https://img.icons8.com/ios-filled/50/000000/shield.png" alt="Shield">
+                <span>Secure payment</span>
             </div>
             
-            <p class="policy-text">By tapping <strong>Pay</strong> to make a purchase, you acknowledge that you are purchasing a limited license to access this virtual item subject to</p>
+            <div class="order-details">
+                <div class="detail-row">
+                    <span>Account</span>
+                    <span id="accountName"></span>
+                </div>
+                <div class="detail-row">
+                    <span id="summaryCoins"></span>
+                    <span id="summaryPrice"></span>
+                </div>
+            </div>
+            
+            <div class="payment-method-section">
+                <h4>Payment method</h4>
+                <div class="payment-option selected" data-method="card">
+                    <img src="https://img.icons8.com/?size=100&id=E5EliYtohgj5&format=png&color=000000" alt="Credit Card">
+                    <span>Add Credit Or Debit Card</span>
+                    <div class="dot"></div>
+                </div>
+                <div class="payment-option" data-method="applepay">
+                    <img src="https://img.icons8.com/ios-filled/50/000000/apple-pay.png" alt="Apple Pay">
+                    <span>Apple Pay</span>
+                    <div class="dot"></div>
+                </div>
+                
+                <p class="policy-text">By tapping <strong>Pay</strong> to make a purchase, you acknowledge that you are purchasing a limited license to access this virtual item subject to policy</p>
+            </div>
+            
+            <div class="total-row">
+                <span>Total</span>
+                <span id="summaryTotal"></span>
+            </div>
+            
+            <button class="pay-btn" id="payNowBtn">
+                <img src="https://img.icons8.com/ios-filled/50/000000/shield.png" alt="Shield">
+                Pay now
+            </button>
         </div>
-        
-        <div class="total-row">
-            <span>Total</span>
-            <span id="summaryTotal"></span>
-        </div>
-        
-        <button class="pay-btn" id="payNowBtn">Pay now</button>
     </div>
-</div>
 
     <div class="overlay" id="loaderModal">
         <div class="loader-container">
@@ -915,194 +956,193 @@
         </div>
     </div>
 
-    <script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const mainPage = document.getElementById('mainPage');
-        const customModal = document.getElementById('customModal');
-        const orderModal = document.getElementById('orderModal');
-        const loaderModal = document.getElementById('loaderModal');
-        const successModal = document.getElementById('successModal');
-        
-        const customBtn = document.getElementById('customBtn');
-        const modalBackBtn = document.getElementById('modalBackBtn');
-        const rechargeBtn = document.getElementById('rechargeBtn');
-        const summaryBackBtn = document.getElementById('summaryBackBtn');
-        const payNowBtn = document.getElementById('payNowBtn');
-        const goBackBtn = document.getElementById('goBackBtn');
-        const buyButton = document.getElementById('buyButton');
-        const coinOptions = document.querySelectorAll('.coin-option');
-        const paymentOptions = document.querySelectorAll('.payment-option');
-        const usernameInput = document.getElementById('usernameInput');
-        const coinAmountInput = document.getElementById('coinAmountInput');
-        const countdownTimer = document.getElementById('countdownTimer');
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const mainPage = document.getElementById('mainPage');
+    const customModal = document.getElementById('customModal');
+    const orderModal = document.getElementById('orderModal');
+    const loaderModal = document.getElementById('loaderModal');
+    const successModal = document.getElementById('successModal');
+    
+    const customBtn = document.getElementById('customBtn');
+    const modalBackBtn = document.getElementById('modalBackBtn');
+    const rechargeBtn = document.getElementById('rechargeBtn');
+    const summaryBackBtn = document.getElementById('summaryBackBtn');
+    const payNowBtn = document.getElementById('payNowBtn');
+    const goBackBtn = document.getElementById('goBackBtn');
+    const buyButton = document.getElementById('buyButton');
+    const coinOptions = document.querySelectorAll('.coin-option');
+    const paymentOptions = document.querySelectorAll('.payment-option');
+    const usernameInput = document.getElementById('usernameInput');
+    const coinAmountInput = document.getElementById('coinAmountInput');
+    const countdownTimer = document.getElementById('countdownTimer');
 
-        let selectedCoins = 30;
-        let selectedPrice = 0.31;
-        let customAmount = '';
-        let countdownInterval;
+    let selectedCoins = 30;
+    let selectedPrice = 0.31;
+    let customAmount = '';
+    let countdownInterval;
 
-        // Handle coin option selection and button text
-        coinOptions.forEach(option => {
-            option.addEventListener('click', () => {
-                coinOptions.forEach(opt => opt.classList.remove('selected'));
-                option.classList.add('selected');
-
-                if (option.id === 'customBtn') {
-                    // Custom button handling
-                } else {
-                    selectedCoins = option.dataset.coins;
-                    selectedPrice = parseFloat(option.dataset.price);
-                    buyButton.textContent = `Buy for $${parseFloat(selectedPrice).toFixed(2)}`;
-                }
-            });
-        });
-
-        // Set initial selected state for the first option
-        document.querySelector('.coin-option[data-coins="30"]').classList.add('selected');
-        buyButton.textContent = `Buy for $0.31`;
-
-        // Custom modal logic
-        customBtn.addEventListener('click', () => {
+    // Handle coin option selection and button text
+    coinOptions.forEach(option => {
+        option.addEventListener('click', () => {
             coinOptions.forEach(opt => opt.classList.remove('selected'));
-            customBtn.classList.add('selected');
-            customModal.classList.add('show');
-        });
+            option.classList.add('selected');
 
-        modalBackBtn.addEventListener('click', () => {
-            customModal.classList.remove('show');
-        });
-
-        // Keypad functionality - FIXED VERSION
-        const usdAmountDisplay = document.getElementById('usdAmountDisplay');
-        const customTotalAmount = document.getElementById('customTotalAmount');
-
-        keypad.addEventListener('click', (e) => {
-            // Only handle button clicks
-            if (e.target.tagName !== 'BUTTON') return;
-            
-            const button = e.target;
-            const value = button.textContent;
-            
-            if (value === '⌫') {
-                // Handle backspace
-                customAmount = customAmount.slice(0, -1);
-            } else if (value === '000') {
-                // Handle triple zero
-                customAmount += '000';
+            if (option.id === 'customBtn') {
+                // Custom button handling
             } else {
-                // Handle regular numbers (0-9)
-                customAmount += value;
+                selectedCoins = option.dataset.coins;
+                selectedPrice = parseFloat(option.dataset.price);
+                buyButton.textContent = `Buy for $${parseFloat(selectedPrice).toFixed(2)}`;
             }
-            
-            // Update the input field and calculations
-            updateCustomAmountDisplay();
-        });
-
-        // Handle direct input - REMOVE DIGIT LIMIT
-        coinAmountInput.addEventListener('input', (e) => {
-            let value = e.target.value.replace(/\D/g, '');
-            customAmount = value;
-            updateCustomAmountDisplay();
-        });
-
-        // Function to update the display with current amount
-        function updateCustomAmountDisplay() {
-            const coins = parseInt(customAmount || '0', 10);
-            const usd = (coins * 0.0104).toFixed(2);
-            
-            // Update all displays
-            coinAmountInput.value = coins.toLocaleString();
-            usdAmountDisplay.textContent = `$${usd}`;
-            customTotalAmount.textContent = `$${usd}`;
-            
-            selectedCoins = coins;
-            selectedPrice = parseFloat(usd);
-        }
-
-        rechargeBtn.addEventListener('click', () => {
-            customModal.classList.remove('show');
-            buyButton.textContent = `Buy for $${selectedPrice.toFixed(2)}`;
-            orderModal.classList.add('show');
-            updateSummaryPage();
-            mainPage.style.display = 'none';
-        });
-
-        // Payment method selection
-        paymentOptions.forEach(option => {
-            option.addEventListener('click', () => {
-                paymentOptions.forEach(opt => opt.classList.remove('selected'));
-                option.classList.add('selected');
-            });
-        });
-
-        // Update order summary page
-        function updateSummaryPage() {
-            document.getElementById('accountName').textContent = usernameInput.value || 'Guest';
-            document.getElementById('summaryCoins').textContent = `${parseInt(selectedCoins).toLocaleString()} Coins`;
-            document.getElementById('summaryPrice').textContent = `$${selectedPrice.toFixed(2)}`;
-            document.getElementById('summaryTotal').textContent = `$${selectedPrice.toFixed(2)}`;
-        }
-
-        // Start countdown timer
-        function startCountdown() {
-            let timeLeft = 300; // 5 minutes in seconds
-            
-            clearInterval(countdownInterval);
-            countdownInterval = setInterval(() => {
-                timeLeft--;
-                
-                if (timeLeft <= 0) {
-                    clearInterval(countdownInterval);
-                    countdownTimer.textContent = "00:00";
-                    return;
-                }
-                
-                const minutes = Math.floor(timeLeft / 60);
-                const seconds = timeLeft % 60;
-                countdownTimer.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
-            }, 1000);
-        }
-
-        // Navigation
-        buyButton.addEventListener('click', () => {
-            mainPage.style.display = 'none';
-            orderModal.classList.add('show');
-            updateSummaryPage();
-        });
-
-        summaryBackBtn.addEventListener('click', () => {
-            orderModal.classList.remove('show');
-            mainPage.style.display = 'flex';
-        });
-
-        payNowBtn.addEventListener('click', () => {
-            orderModal.classList.remove('show');
-            loaderModal.classList.add('show');
-            startCountdown();
-            
-            setTimeout(() => {
-                clearInterval(countdownInterval);
-                loaderModal.classList.remove('show');
-                successModal.classList.add('show');
-                document.getElementById('successMessage').textContent = `${parseInt(selectedCoins).toLocaleString()} Coins were sent to ${usernameInput.value || 'Guest'}`;
-            }, 3000); // 3-second delay
-        });
-
-        goBackBtn.addEventListener('click', () => {
-            successModal.classList.remove('show');
-            mainPage.style.display = 'flex';
-        });
-
-        // Close overlays when clicking outside
-        document.querySelectorAll('.overlay').forEach(overlay => {
-            overlay.addEventListener('click', (e) => {
-                if (e.target === overlay) {
-                    overlay.classList.remove('show');
-                    mainPage.style.display = 'flex';
-                }
-            });
         });
     });
+
+    // Set initial selected state for the first option
+    document.querySelector('.coin-option[data-coins="30"]').classList.add('selected');
+    buyButton.textContent = `Buy for $0.31`;
+
+    // Custom modal logic
+    customBtn.addEventListener('click', () => {
+        coinOptions.forEach(opt => opt.classList.remove('selected'));
+        customBtn.classList.add('selected');
+        customModal.classList.add('show');
+    });
+
+    modalBackBtn.addEventListener('click', () => {
+        customModal.classList.remove('show');
+    });
+
+    // Keypad functionality - FIXED VERSION
+    const usdAmountDisplay = document.getElementById('usdAmountDisplay');
+    const customTotalAmount = document.getElementById('customTotalAmount');
+
+    keypad.addEventListener('click', (e) => {
+        // Only handle button clicks
+        if (e.target.tagName !== 'BUTTON') return;
+        
+        const button = e.target;
+        const value = button.textContent;
+        
+        if (value === '⌫') {
+            // Handle backspace
+            customAmount = customAmount.slice(0, -1);
+        } else if (value === '000') {
+            // Handle triple zero
+            customAmount += '000';
+        } else {
+            // Handle regular numbers (0-9)
+            customAmount += value;
+        }
+        
+        // Update the input field and calculations
+        updateCustomAmountDisplay();
+    });
+
+    // Handle direct input - REMOVE DIGIT LIMIT
+    coinAmountInput.addEventListener('input', (e) => {
+        let value = e.target.value.replace(/\D/g, '');
+        customAmount = value;
+        updateCustomAmountDisplay();
+    });
+
+    // Function to update the display with current amount
+    function updateCustomAmountDisplay() {
+        const coins = parseInt(customAmount || '0', 10);
+        const usd = (coins * 0.0104).toFixed(2);
+        
+        // Update all displays
+        coinAmountInput.value = coins.toLocaleString();
+        usdAmountDisplay.textContent = `$${usd}`;
+        customTotalAmount.textContent = `$${usd}`;
+        
+        selectedCoins = coins;
+        selectedPrice = parseFloat(usd);
+    }
+
+    rechargeBtn.addEventListener('click', () => {
+        customModal.classList.remove('show');
+        buyButton.textContent = `Buy for $${selectedPrice.toFixed(2)}`;
+        orderModal.classList.add('show');
+        updateSummaryPage();
+        // Removed the line that hides the main page
+    });
+
+    // Payment method selection
+    paymentOptions.forEach(option => {
+        option.addEventListener('click', () => {
+            paymentOptions.forEach(opt => opt.classList.remove('selected'));
+            option.classList.add('selected');
+        });
+    });
+
+    // Update order summary page
+    function updateSummaryPage() {
+        document.getElementById('accountName').textContent = usernameInput.value || 'Guest';
+        document.getElementById('summaryCoins').textContent = `${parseInt(selectedCoins).toLocaleString()} Coins`;
+        document.getElementById('summaryPrice').textContent = `$${selectedPrice.toFixed(2)}`;
+        document.getElementById('summaryTotal').textContent = `$${selectedPrice.toFixed(2)}`;
+    }
+
+    // Start countdown timer
+    function startCountdown() {
+        let timeLeft = 300; // 5 minutes in seconds
+        
+        clearInterval(countdownInterval);
+        countdownInterval = setInterval(() => {
+            timeLeft--;
+            
+            if (timeLeft <= 0) {
+                clearInterval(countdownInterval);
+                countdownTimer.textContent = "00:00";
+                return;
+            }
+            
+            const minutes = Math.floor(timeLeft / 60);
+            const seconds = timeLeft % 60;
+            countdownTimer.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+        }, 1000);
+    }
+
+    // Navigation
+    buyButton.addEventListener('click', () => {
+        // Removed the line that hides the main page
+        orderModal.classList.add('show');
+        updateSummaryPage();
+    });
+
+    summaryBackBtn.addEventListener('click', () => {
+        orderModal.classList.remove('show');
+        // Removed the line that shows the main page (it should stay visible)
+    });
+
+    payNowBtn.addEventListener('click', () => {
+        orderModal.classList.remove('show');
+        loaderModal.classList.add('show');
+        startCountdown();
+        
+        setTimeout(() => {
+            clearInterval(countdownInterval);
+            loaderModal.classList.remove('show');
+            successModal.classList.add('show');
+            document.getElementById('successMessage').textContent = `${parseInt(selectedCoins).toLocaleString()} Coins were sent to ${usernameInput.value || 'Guest'}`;
+        }, 3000); // 3-second delay
+    });
+
+    goBackBtn.addEventListener('click', () => {
+        successModal.classList.remove('show');
+        // Removed the line that shows the main page (it should stay visible)
+    });
+
+    // Close overlays when clicking outside
+    document.querySelectorAll('.overlay').forEach(overlay => {
+        overlay.addEventListener('click', (e) => {
+            if (e.target === overlay && overlay.id !== 'orderModal') {
+                overlay.classList.remove('show');
+            }
+        });
+    });
+});
 </script>
 </body>
 </html>

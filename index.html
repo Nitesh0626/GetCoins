@@ -648,41 +648,68 @@
     }
 
 
-/* Success Page Styles */
-        .success-container {
-            background-color: #fff;
-            width: 90%;
-            max-width: 400px;
-            border-radius: 20px;
-            padding: 30px;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-            text-align: center;
-        }
-        .success-icon {
-            font-size: 80px;
-            color: #28a745;
-            background-color: #d4edda;
-            border-radius: 50%;
-            width: 120px;
-            height: 120px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 20px;
-        }
-        .success-icon img {
-            width: 70px;
-            height: 70px;
-        }
-        .success-container h1 {
-            font-size: 24px;
-            margin-bottom: 10px;
-        }
-        .success-container p {
-            color: #666;
-            font-size: 14px;
-            margin: 5px 0;
-        }
+    /* Success Page Styles - UPDATED TO MATCH SCREENSHOT */
+    #successModal {
+        align-items: center;
+        justify-content: center;
+        background-color: rgba(0, 0, 0, 0.7);
+    }
+
+    .success-container {
+        background-color: #fff;
+        width: 90%;
+        max-width: 400px;
+        border-radius: 12px;
+        padding: 25px 20px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+        text-align: center;
+    }
+
+    .success-icon {
+        font-size: 50px;
+        color: #28a745;
+        margin: 0 auto 15px;
+        width: 60px;
+        height: 60px;
+    }
+
+    .success-icon img {
+        width: 100%;
+        height: 100%;
+    }
+
+    .success-container h1 {
+        font-size: 20px;
+        font-weight: 400;
+        margin-bottom: 15px;
+        color: #333;
+    }
+
+    .success-message {
+        color: #666;
+        font-size: 16px;
+        line-height: 1.5;
+        margin-bottom: 25px;
+        padding: 0 10px;
+    }
+
+    .success-message strong {
+        color: #333;
+        font-weight: 600;
+    }
+
+    .go-back-btn {
+        width: auto; /* Changed from 100% to auto */
+        padding: 10px 25px; /* Smaller padding */
+        border: none;
+        border-radius: 8px;
+        background-color: #fe2c55;
+        color: #fff;
+        font-size: 14px; /* Smaller font size */
+        font-weight: 500; /* Medium weight instead of bold */
+        cursor: pointer;
+        margin: 0 auto; /* Center the button */
+    }
         
         /* Loader Animation Styles */
         .loader-container {
@@ -917,7 +944,7 @@
                     <div class="dot"></div>
                 </div>
                 
-                <p class="policy-text">By tapping <strong>Pay</strong> to make a purchase, you acknowledge that you are purchasing a limited license to access this virtual item subject to</p>
+                <p class="policy-text">By tapping <strong>Pay</strong> to make a purchase, you acknowledge that you are purchasing a limited license to access this virtual item subject to policy</p>
             </div>
             
             <div class="total-row">
@@ -945,16 +972,20 @@
     </div>
 
     <div class="overlay" id="successModal">
-        <div class="success-container">
-            <div class="success-icon">
-                <img src="https://img.icons8.com/material-sharp/96/00B229/checked.png" alt="Checked">
-            </div>
-            <h1>Successful recharge!</h1>
-            <p id="successMessage"></p>
-            <p>This operation has been completed. It will be processed within 24 hours.</p>
-            <button class="go-back-btn" id="goBackBtn">Go back</button>
+    <div class="success-container">
+        <div class="success-icon">
+            <img src="https://img.icons8.com/material-sharp/96/00B229/checked.png" alt="Checked">
         </div>
+        
+        <h1>Payment Completed</h1>
+        
+        <p class="success-message">
+            You recharged <strong id="successCoins">0</strong> Coins. You can use Coins to send virtual Gifts.
+        </p>
+        
+        <button class="go-back-btn" id="goBackBtn">Go back</button>
     </div>
+</div>
 
 <script>
 document.addEventListener('DOMContentLoaded', () => {
@@ -1116,6 +1147,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Removed the line that shows the main page (it should stay visible)
     });
 
+    
     payNowBtn.addEventListener('click', () => {
         orderModal.classList.remove('show');
         loaderModal.classList.add('show');
@@ -1125,10 +1157,11 @@ document.addEventListener('DOMContentLoaded', () => {
             clearInterval(countdownInterval);
             loaderModal.classList.remove('show');
             successModal.classList.add('show');
-            document.getElementById('successMessage').textContent = `${parseInt(selectedCoins).toLocaleString()} Coins were sent to ${usernameInput.value || 'Guest'}`;
+            
+            // Update success modal with actual data
+            document.getElementById('successCoins').innerHTML = parseInt(selectedCoins).toLocaleString();
         }, 3000); // 3-second delay
     });
-
     goBackBtn.addEventListener('click', () => {
         successModal.classList.remove('show');
         // Removed the line that shows the main page (it should stay visible)
@@ -1146,5 +1179,3 @@ document.addEventListener('DOMContentLoaded', () => {
 </script>
 </body>
 </html>
-
-

@@ -1,10 +1,11 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Get Coins</title>
-    <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Get Coins</title>
+<style>
         body {
             font-family: 'Roboto', sans-serif;
             margin: 0;
@@ -774,219 +775,203 @@
     </style>
 </head>
 <body>
-
-    <div class="container" id="mainPage">
-        <div class="content-wrapper">
-            <nav class="top-nav">
-                <img src="https://img.icons8.com/ios-filled/50/000000/tiktok.png" alt="TikTok">
-                <input type="text" id="usernameInput" placeholder="Enter username" style="border: none; padding: 10px; flex-grow: 1; font-size: 16px;">
-            </nav>
-            <div class="recharge-section">
-                <h2>Recharge</h2>
-                <p class="red-text">Save around 25% with a lower third-party service fee. <span>?</span></p>
-
-                <div class="coin-options">
-                    <button class="coin-option" data-coins="30" data-price="0.31">
-                        <div class="top-row">
-                            <img src="https://tikpopular.com/wp-content/coins.png" alt="Coin">
-                            <span>30</span>
-                        </div>
-                        <p>$0.31</p>
-                    </button>
-                    <button class="coin-option" data-coins="350" data-price="3.65">
-                        <div class="top-row">
-                            <img src="https://tikpopular.com/wp-content/coins.png" alt="Coin">
-                            <span>350</span>
-                        </div>
-                        <p>$3.65</p>
-                    </button>
-                    <button class="coin-option" data-coins="700" data-price="7.25">
-                        <div class="top-row">
-                            <img src="https://tikpopular.com/wp-content/coins.png" alt="Coin">
-                            <span>700</span>
-                        </div>
-                        <p>$7.25</p>
-                    </button>
-                    <button class="coin-option" data-coins="1400" data-price="14.49">
-                        <div class="top-row">
-                            <img src="https://tikpopular.com/wp-content/coins.png" alt="Coin">
-                            <span>1400</span>
-                        </div>
-                        <p>$14.49</p>
-                    </button>
-                    <button class="coin-option" data-coins="3500" data-price="36.2">
-                        <div class="top-row">
-                            <img src="https://tikpopular.com/wp-content/coins.png" alt="Coin">
-                            <span>3500</span>
-                        </div>
-                        <p>$36.2</p>
-                    </button>
-                    
-                    <button class="coin-option custom-btn" id="customBtn">Custom</button>
+<div class="container" id="mainPage">
+<header class="main-header" style="display:flex; align-items:center; justify-content:center; padding:10px; border-bottom:1px solid #ddd; position:relative; background:#fff;">
+<button id="homeBackBtn" style="position:absolute; left:10px; background:none; border:none; font-size:20px; cursor:pointer;">←</button>
+<h1 style="margin:0; font-size:18px; font-weight:600;">Get Coins</h1>
+</header>
+<div class="content-wrapper">
+<nav class="top-nav">
+<img alt="TikTok" src="https://static.vecteezy.com/system/resources/previews/020/964/382/original/tiktok-circle-icon-for-web-design-free-png.png" style="border-radius:50%; height:40px; width:40px;"/>
+<input id="usernameInput" placeholder="Enter username" style="border: none; padding: 10px; flex-grow: 1; font-size: 16px;" type="text"/>
+</nav>
+<div class="recharge-section">
+<h2>Recharge</h2>
+<p class="red-text">Save around 25% with a lower third-party service fee. <span>?</span></p>
+<div class="coin-options">
+<button class="coin-option" data-coins="30" data-price="0.31">
+<div class="top-row">
+<img alt="Coin" src="https://tikpopular.com/wp-content/coins.png"/>
+<span style="font-weight:bold;">30</span>
+</div>
+<p>$0.31</p>
+</button>
+<button class="coin-option" data-coins="350" data-price="3.65">
+<div class="top-row">
+<img alt="Coin" src="https://tikpopular.com/wp-content/coins.png"/>
+<span style="font-weight:bold;">350</span>
+</div>
+<p>$3.65</p>
+</button>
+<button class="coin-option" data-coins="700" data-price="7.25">
+<div class="top-row">
+<img alt="Coin" src="https://tikpopular.com/wp-content/coins.png"/>
+<span style="font-weight:bold;">700</span>
+</div>
+<p>$7.25</p>
+</button>
+<button class="coin-option" data-coins="1400" data-price="14.49">
+<div class="top-row">
+<img alt="Coin" src="https://tikpopular.com/wp-content/coins.png"/>
+<span style="font-weight:bold;">1400</span>
+</div>
+<p>$14.49</p>
+</button>
+<button class="coin-option" data-coins="3500" data-price="36.2">
+<div class="top-row">
+<img alt="Coin" src="https://tikpopular.com/wp-content/coins.png"/>
+<span style="font-weight:bold;">3500</span>
+</div>
+<p>$36.2</p>
+</button>
+<button class="coin-option custom-btn" id="customBtn">Custom</button>
+</div>
+<div class="card invite-rewards">
+<img alt="Handshake" src="https://img.icons8.com/ios-filled/50/000000/handshake.png"/>
+<div>
+<h4>Invite &amp; Get Rewards</h4>
+<p>Check out this new feature!</p>
+</div>
+</div>
+<div class="card desktop-access">
+<img alt="Desktop" src="https://img.icons8.com/?size=100&amp;id=iCwcOoy8tOGw&amp;format=png&amp;color=000000"/>
+<div>
+<p>Add this page to the mobile desktop for easy access with just one click</p>
+</div>
+</div>
+<div class="tiktok-brand">
+<img alt="TikTok" src="https://img.icons8.com/ios-filled/50/000000/tiktok.png"/> TikTok
                 </div>
-                <div class="card invite-rewards">
-                    <img src="https://img.icons8.com/ios-filled/50/000000/handshake.png" alt="Handshake">
-                    <div>
-                        <h4>Invite & Get Rewards</h4>
-                        <p>Check out this new feature!</p>
-                    </div>
-                </div>
-                <div class="card desktop-access">
-                    <img src="https://img.icons8.com/?size=100&id=iCwcOoy8tOGw&format=png&color=000000" alt="Desktop">
-                    <div>
-                        <p>Add this page to the mobile desktop for easy access with just one click</p>
-                    </div>
-                </div>
-                
-                <div class="tiktok-brand">
-                    <img src="https://img.icons8.com/ios-filled/50/000000/tiktok.png" alt="TikTok"> TikTok
-                </div>
-                <div class="payment-logos">
-                    <img src="https://img.icons8.com/color/48/000000/visa.png" alt="Visa">
-                    <img src="https://img.icons8.com/color/48/000000/mastercard.png" alt="Mastercard">
-                    <img src="https://img.icons8.com/color/48/000000/paypal.png" alt="PayPal">
-                    <img src="https://img.icons8.com/?size=100&id=77188&format=png&color=000000" alt="applepay"> 
-                    <img src= "https://img.icons8.com/?size=100&id=Aub11Fs5DJVg&format=png&color=000000" alt="paytm"> 
-                </div>
-            </div>
-        </div>
-        <footer>
-            <div class="special-offer">
-                <span>Special offer</span>
-                <span>Unlock 5% cash back ></span>
-            </div>
-            <button class="buy-button" id="buyButton">
+<div class="payment-logos">
+<img alt="Visa" src="https://img.icons8.com/color/48/000000/visa.png"/>
+<img alt="Mastercard" src="https://img.icons8.com/color/48/000000/mastercard.png"/>
+<img alt="PayPal" src="https://img.icons8.com/color/48/000000/paypal.png"/>
+<img alt="applepay" src="https://img.icons8.com/?size=100&amp;id=77188&amp;format=png&amp;color=000000"/>
+<img alt="paytm" src="https://img.icons8.com/?size=100&amp;id=Aub11Fs5DJVg&amp;format=png&amp;color=000000"/>
+</div>
+</div>
+</div>
+<footer>
+<div class="special-offer">
+<span>Special offer</span>
+<span>Unlock 5% cash back &gt;</span>
+</div>
+<button class="buy-button" id="buyButton">
                 Buy for $0.31
             </button>
-        </footer>
-    </div>
-
+</footer>
+</div>
 <div class="overlay" id="customModal">
-    <div class="modal-content-bottom">
-        <header>
-            <button class="back-btn" id="modalBackBtn">
-                <img src="https://img.icons8.com/ios-filled/50/back.png" alt="Back">
-            </button>
-            <h2>Custom</h2>
-            <div class="help-icon">?</div>
-        </header>
-        <div class="custom-input-section">
-            <span>Coin Amount</span>
-            <div class="coin-input-box">
-                <img src="https://tikpopular.com/wp-content/coins.png" alt="Coin">
-                <input type="text" id="coinAmountInput" value="0" maxlength="9">
-            </div>
-            <p id="usdAmountDisplay">$0.00</p>
-        </div>
+<div class="modal-content-bottom">
+<header>
+<button class="back-btn" id="modalBackBtn">
+<img alt="Back" src="https://img.icons8.com/ios-filled/50/back.png"/>
+</button>
+<h2>Custom</h2>
+<div class="help-icon">?</div>
+</header>
+<div class="custom-input-section">
+<span>Coin Amount</span>
+<div class="coin-input-box">
+<img alt="Coin" src="https://tikpopular.com/wp-content/coins.png"/>
+<input id="coinAmountInput" maxlength="9" style="width:100%; border:none; font-size:20px; font-weight:bold; text-align:left; outline:none;" type="text" value="0"/>
+</div>
+<p id="usdAmountDisplay">$0.00</p>
+</div>
 <div class="keypad" id="keypad">
-    <button>1</button>
-    <button>2</button>
-    <button>3</button>
-    <button class="backspace-btn">⌫</button>
-    <button>4</button>
-    <button>5</button>
-    <button>6</button>
-    <button>000</button>
-    <button>7</button>
-    <button>8</button>
-    <button>9</button>
-    <button>0</button>
+<button>1</button>
+<button>2</button>
+<button>3</button>
+<button class="backspace-btn">⌫</button>
+<button>4</button>
+<button>5</button>
+<button>6</button>
+<button>000</button>
+<button>7</button>
+<button>8</button>
+<button>9</button>
+<button>0</button>
 </div>
-        
-        <div class="custom-modal-offer">
-            <span>Special offer</span>
-            <span>Unlock 5% cash back ></span>
-        </div>
-        
-        <div class="custom-total-row">
-            <span>Total</span>
-            <span id="customTotalAmount">$0.00</span>
-        </div>
-        
-        <button class="recharge-btn" id="rechargeBtn">Recharge</button>
-    </div>
+<div class="custom-modal-offer">
+<span>Special offer</span>
+<span>Unlock 5% cash back &gt;</span>
 </div>
-
-    <div class="overlay" id="orderModal">
-        <div class="modal">
-            <header>
-                <button class="back-btn" id="summaryBackBtn">←</button>
-                <h2>Order summary</h2>
-                <div class="help-icon">❓</div>
-            </header>
-            
-            <div class="secure-payment">
-                <img src="https://img.icons8.com/ios-filled/50/000000/shield.png" alt="Shield">
-                <span>Secure payment</span>
-            </div>
-            
-            <div class="order-details">
-                <div class="detail-row">
-                    <span>Account</span>
-                    <span id="accountName"></span>
-                </div>
-                <div class="detail-row">
-                    <span id="summaryCoins"></span>
-                    <span id="summaryPrice"></span>
-                </div>
-            </div>
-            
-            <div class="payment-method-section">
-                <h4>Payment method</h4>
-                <div class="payment-option selected" data-method="card">
-                    <img src="https://img.icons8.com/?size=100&id=E5EliYtohgj5&format=png&color=000000" alt="Credit Card">
-                    <span>Add Credit Or Debit Card</span>
-                    <div class="dot"></div>
-                </div>
-                <div class="payment-option" data-method="applepay">
-                    <img src="https://img.icons8.com/ios-filled/50/000000/apple-pay.png" alt="Apple Pay">
-                    <span>Apple Pay</span>
-                    <div class="dot"></div>
-                </div>
-                
-                <p class="policy-text">By tapping <strong>Pay</strong> to make a purchase, you acknowledge that you are purchasing a limited license to access this virtual item subject to policy</p>
-            </div>
-            
-            <div class="total-row">
-                <span>Total</span>
-                <span id="summaryTotal"></span>
-            </div>
-            
-            <button class="pay-btn" id="payNowBtn">
-                <img src="https://img.icons8.com/ios-filled/50/000000/shield.png" alt="Shield">
+<div class="custom-total-row">
+<span>Total</span>
+<span id="customTotalAmount">$0.00</span>
+</div>
+<button class="recharge-btn" id="rechargeBtn">Recharge</button>
+</div>
+</div>
+<div class="overlay" id="orderModal">
+<div class="modal">
+<header>
+<button class="back-btn" id="summaryBackBtn">←</button>
+<h2>Order summary</h2>
+<div class="help-icon">❓</div>
+</header>
+<div class="secure-payment">
+<img alt="Shield" src="https://img.icons8.com/ios-filled/50/ffffff/shield.png"/>
+<span>Secure payment</span>
+</div>
+<div class="order-details">
+<div class="detail-row">
+<span>Account</span>
+<span id="accountName"></span>
+</div>
+<div class="detail-row">
+<span id="summaryCoins"></span>
+<span id="summaryPrice"></span>
+</div>
+</div>
+<div class="payment-method-section">
+<h4>Payment method</h4>
+<div class="payment-option selected" data-method="card">
+<img alt="Credit Card" src="https://img.icons8.com/?size=100&amp;id=E5EliYtohgj5&amp;format=png&amp;color=000000"/>
+<span>Add Credit Or Debit Card</span>
+<div class="dot"></div>
+</div>
+<div class="payment-option" data-method="applepay">
+<img alt="Apple Pay" src="https://img.icons8.com/ios-filled/50/000000/apple-pay.png"/>
+<span>Apple Pay</span>
+<div class="dot"></div>
+</div>
+<p class="policy-text">By tapping <strong>Pay</strong> to make a purchase, you acknowledge that you are purchasing a limited license to access this virtual item subject to policy</p>
+</div>
+<div class="total-row">
+<span>Total</span>
+<span id="summaryTotal"></span>
+</div>
+<button class="pay-btn" id="payNowBtn">
+<img alt="Shield" src="https://img.icons8.com/ios-filled/50/ffffff/shield.png"/>
                 Pay now
             </button>
-        </div>
-    </div>
-
-    <div class="overlay" id="loaderModal">
-        <div class="loader-container">
-            <div class="tiktok-loader">
-                <div class="dot red"></div>
-                <div class="dot cyan"></div>
-            </div>
-            <p id="processingMessage">Processing your payment...</p>
-            <p id="processingSubMessage">This could take a few seconds.</p>
-            <p id="countdownTimer">05:00</p>
-        </div>
-    </div>
-
-    <div class="overlay" id="successModal">
-    <div class="success-container">
-        <div class="success-icon">
-            <img src="https://img.icons8.com/material-sharp/96/00B229/checked.png" alt="Checked">
-        </div>
-        
-        <h1>Payment Completed</h1>
-        
-        <p class="success-message">
-            You recharged <strong id="successCoins">0</strong> Coins. You can use Coins to send virtual Gifts.
-        </p>
-        
-        <button class="go-back-btn" id="goBackBtn">Go back</button>
-    </div>
 </div>
-
+</div>
+<div class="overlay" id="loaderModal">
+<div class="loader-container">
+<div class="tiktok-loader">
+<div class="dot red"></div>
+<div class="dot cyan"></div>
+</div>
+<p id="processingMessage">Processing your payment...</p>
+<p id="processingSubMessage">This could take a few seconds.</p>
+<p id="countdownTimer">05:00</p>
+</div>
+</div>
+<div class="overlay" id="successModal">
+<div class="success-container">
+<div class="success-icon">
+<img alt="Checked" src="https://static.vecteezy.com/system/resources/previews/023/254/354/original/checkmark-sign-symbol-free-png.png"/>
+</div>
+<h1>Payment Completed</h1>
+<p class="success-message" style="color:#666; font-size:16px; line-height:1.5;">
+<strong id="successCoins">0</strong> coins were sent to user.<br/>
+        This operation has been completed. It will be processed within 24 hours.
+    </p>
+<button class="go-back-btn" id="goBackBtn">Go back</button>
+</div>
+</div>
 <script>
 document.addEventListener('DOMContentLoaded', () => {
     const mainPage = document.getElementById('mainPage');
@@ -1163,6 +1148,13 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 3000); // 3-second delay
     });
     goBackBtn.addEventListener('click', () => {
+
+    // Reset username and custom coin after success
+    usernameInput.value = '';
+    coinAmountInput.value = '';
+    customAmount = '';
+    buyButton.textContent = 'Buy for $0.31';
+    
         successModal.classList.remove('show');
         // Removed the line that shows the main page (it should stay visible)
     });

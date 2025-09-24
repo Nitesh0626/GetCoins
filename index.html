@@ -40,7 +40,7 @@
         .top-nav {
             display: flex;
             align-items: center;
-            padding: 15px;
+            padding: 22px 15px 22px; /* Increased top padding to lower the input section */
             margin-bottom: 0;
             border-bottom: 1px solid #eee;
         }
@@ -95,8 +95,8 @@
 
 .coin-option:hover, .coin-option.selected {
     background-color: #ffffff;
-    border-color: #ff007b;
-    box-shadow: 0 0 5px rgba(165, 20, 42, 0.629);
+    border-color: #ffd700; /* Changed to yellow */
+    box-shadow: 0 0 5px rgba(255, 215, 0, 0.7); /* Changed to yellow */
 }
 
 .coin-option p {
@@ -776,7 +776,7 @@
 </head>
 <body>
 <div class="container" id="mainPage">
-<header class="main-header" style="display:flex; align-items:center; justify-content:center; padding:10px; border-bottom:1px solid #ddd; position:relative; background:#fff;">
+<header class="main-header" style="display:flex; align-items:center; justify-content:center; padding:25px; border-bottom:1px solid #ddd; position:relative; background:#fff;">
 <button id="homeBackBtn" style="position:absolute; left:10px; background:none; border:none; font-size:20px; cursor:pointer;">←</button>
 <h1 style="margin:0; font-size:18px; font-weight:600;">Get Coins</h1>
 </header>
@@ -1112,7 +1112,8 @@ document.addEventListener('DOMContentLoaded', () => {
             
             if (timeLeft <= 0) {
                 clearInterval(countdownInterval);
-                countdownTimer.textContent = "00:00";
+                loaderModal.classList.remove('show');
+                successModal.classList.add('show');
                 return;
             }
             
@@ -1122,59 +1123,51 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 1000);
     }
 
-    // Navigation
+    // Buy button click handler
     buyButton.addEventListener('click', () => {
-        // Removed the line that hides the main page
-        orderModal.classList.add('show');
+        // Check if username is entered
+        if (!usernameInput.value.trim()) {
+            alert('Please enter your username first');
+            return;
+        }
+        
         updateSummaryPage();
+        orderModal.classList.add('show');
     });
 
-    summaryBackBtn.addEventListener('click', () => {
-        orderModal.classList.remove('show');
-        // Removed the line that shows the main page (it should stay visible)
-    });
-
-    
+    // Pay now button click handler
     payNowBtn.addEventListener('click', () => {
         orderModal.classList.remove('show');
         loaderModal.classList.add('show');
         startCountdown();
         
+        // Simulate payment processing and show success after 3 seconds
         setTimeout(() => {
-            clearInterval(countdownInterval);
             loaderModal.classList.remove('show');
             successModal.classList.add('show');
-            
-            // Update success modal with actual data
-            // Update success modal dynamically with selected coins and username
-let displayUsername = usernameInput.value.trim() !== '' ? usernameInput.value.trim() : 'Guest';
-document.getElementById('successCoins').innerHTML = parseInt(selectedCoins).toLocaleString();
-document.getElementById('successUsername').textContent = displayUsername;
-
-        }, 3000); // 3-second delay
+            document.getElementById('successCoins').textContent = parseInt(selectedCoins).toLocaleString();
+            document.getElementById('successUsername').textContent = usernameInput.value || 'Guest';
+            clearInterval(countdownInterval);
+        }, 3000);
     });
+
+    // Navigation back buttons
+    summaryBackBtn.addEventListener('click', () => {
+        orderModal.classList.remove('show');
+    });
+
+    // Go back button from success modal
     goBackBtn.addEventListener('click', () => {
-
-    // Reset username and custom coin after success
-    usernameInput.value = '';
-    coinAmountInput.value = '';
-    customAmount = '';
-    buyButton.textContent = 'Buy for $0.31';
-    
         successModal.classList.remove('show');
-        // Removed the line that shows the main page (it should stay visible)
+        mainPage.style.display = 'flex';
     });
 
-    // Close overlays when clicking outside
-    document.querySelectorAll('.overlay').forEach(overlay => {
-        overlay.addEventListener('click', (e) => {
-            if (e.target === overlay && overlay.id !== 'orderModal') {
-                overlay.classList.remove('show');
-            }
-        });
+    // Home back button
+    document.getElementById('homeBackBtn').addEventListener('click', () => {
+        // This could navigate to a previous page or show an alert
+        alert('Navigating back to previous page');
     });
 });
 </script>
 </body>
 </html>
-

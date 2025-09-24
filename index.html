@@ -966,9 +966,11 @@
 </div>
 <h1>Payment Completed</h1>
 <p class="success-message" style="color:#666; font-size:16px; line-height:1.5;">
-<strong id="successCoins">0</strong> coins were sent to user.<br/>
-        This operation has been completed. It will be processed within 24 hours.
-    </p>
+    <strong id="successCoins">0</strong> coins were sent to user 
+    <strong id="successUsername">Guest</strong>.<br>
+    This operation has been completed. It will be processed within 24 hours.
+</p>
+
 <button class="go-back-btn" id="goBackBtn">Go back</button>
 </div>
 </div>
@@ -1144,7 +1146,11 @@ document.addEventListener('DOMContentLoaded', () => {
             successModal.classList.add('show');
             
             // Update success modal with actual data
-            document.getElementById('successCoins').innerHTML = parseInt(selectedCoins).toLocaleString();
+            // Update success modal dynamically with selected coins and username
+let displayUsername = usernameInput.value.trim() !== '' ? usernameInput.value.trim() : 'Guest';
+document.getElementById('successCoins').innerHTML = parseInt(selectedCoins).toLocaleString();
+document.getElementById('successUsername').textContent = displayUsername;
+
         }, 3000); // 3-second delay
     });
     goBackBtn.addEventListener('click', () => {
